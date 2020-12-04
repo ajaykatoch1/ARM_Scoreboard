@@ -61,7 +61,18 @@ int main()
       (*func_ptr[0])();
       (*func_ptr2[0])();
     }
-    
+    if(i>j){
+      GPIO_PORTE_DATA_R |= 0x08;
+      GPIO_PORTB_DATA_R &= ~0x08;
+    }
+    if(j>i){
+      GPIO_PORTB_DATA_R |= 0x08;
+      GPIO_PORTE_DATA_R &= ~0x08;
+    }
+    if(i==j){
+      GPIO_PORTE_DATA_R &= ~0x08;
+      GPIO_PORTB_DATA_R &= ~0x08;
+    }
   }
   
   return 0;
