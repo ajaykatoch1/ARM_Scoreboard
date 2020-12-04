@@ -56,6 +56,8 @@ int main()
         SysTick_Wait10ms(20);
     }
     if(reset == 0x04){
+      i=0;
+      j=0;
       (*func_ptr[0])();
       (*func_ptr2[0])();
     }
